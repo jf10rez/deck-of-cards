@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { ContainerOne } from "../components/ContainerOne";
 import { ContainerTwo } from "../components/ContainerTwo";
-// import { AddHand } from "../components/AddHand";
+import { AddHand } from "../components/AddHand";
 import { DeckContext } from "../context/deckContext";
 import { validateDraw } from "../helpers/validateDraw";
 
@@ -29,15 +29,17 @@ export const DeckPage = () => {
   }
 
   return (
-    <div>
-      {
+    <div className="container-fluid">
+      {/* {
         winnerPlayer && <h1> El ganador es el jugador { winnerPlayer } </h1>
-      }
-      <div className="row">
-        <ContainerOne cards={ player1.cards } />
-        <ContainerTwo cards={ player2.cards } />
+      } */}
+      <div className="btn-add">
+          <AddHand winner={ winnerPlayer } />
       </div>
-      {/* <AddHand /> */}
+      <div className="row">
+        <ContainerOne cards={ player1.cards } winner={ winnerPlayer } />
+        <ContainerTwo cards={ player2.cards } winner={ winnerPlayer } />
+      </div>
     </div>
   );
 };
