@@ -16,7 +16,7 @@ body{
 }
 
 .container-cards {
-    height: 100vh;
+    height: auto;
     border: solid 1px;
 }
 
@@ -45,9 +45,34 @@ body{
     border-top: solid 1px;
 }
 
+.btn-add {
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.btn-add button{
+    position: absolute;
+}
+
 
 img {
     width: 15%;
     height: 15%;
     padding: 5px;
+}
+
+img:hover {
+    transform: scale(1.2);
+    filter: drop-shadow(0px 1px 13px rgba(0, 0, 0, 0.1));
+}
+
+.bi-check-circle-fill::before{
+    color: green;
+    font-size: 42px;
+}
+
+.bi-x-circle::before{
+    color: red;
+    font-size: 42px;
 }
