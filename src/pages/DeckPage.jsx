@@ -4,6 +4,7 @@ import { ContainerTwo } from "../components/ContainerTwo";
 import { AddHand } from "../components/AddHand";
 import { DeckContext } from "../context/deckContext";
 import { validateDraw } from "../helpers/validateDraw";
+import { validateUpperCard } from "../helpers/validateUpperCard";
 
 export const DeckPage = () => {
   const { decks } = useContext(DeckContext);
@@ -13,9 +14,11 @@ export const DeckPage = () => {
 
   useEffect(() => {
     if (player1.win && player2.win) {
+      const cardUpperPlayer1 = validateUpperCard( player1.cards, player1.cards[player1.cards.length - 1] )
+      const cardUpperPlayer2 = validateUpperCard( player2.cards, player2.cards[player2.cards.length - 1] )
       const winner = validateDraw(
-        player1.cards[player1.cards.length - 1],
-        player2.cards[player2.cards.length - 1]
+        cardUpperPlayer1,
+        cardUpperPlayer2
       );
       return setWinnerPlayer( winner )
     }

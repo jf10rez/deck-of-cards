@@ -36,7 +36,6 @@ export const FormHome = () => {
         )
           .then((response) => response.json())
           .then((game) => {
-            console.log(game)
             dispatch({ type: "finishLoading" });
             if( !game.success ){
               dispatch({ type: "finishLoading" });
