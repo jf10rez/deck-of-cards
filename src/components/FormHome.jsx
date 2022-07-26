@@ -14,7 +14,7 @@ export const FormHome = () => {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    if (!player1 && !player2) {
+    if (!player1 || !player2) {
       return Swal.fire("Error", "Debe completar los campos", "error");
     }
     dispatch({
