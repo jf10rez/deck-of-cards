@@ -3,13 +3,19 @@ import { DeckContext } from "../context/deckContext";
 
 import card from "../assets/card.jpg";
 
-export const ContainerOne = ({ cards }) => {
+export const ContainerOne = ({ cards, winner }) => {
   const { decks } = useContext(DeckContext);
 
   return (
     <div className="col-md-6 container-cards">
       <div className="title">
         <h2>{decks.player1.name}</h2>
+        {
+          winner && (
+            winner === 1 ? <i className="bi bi-check-circle-fill"></i>
+            : <i className="bi bi-x-circle"></i>
+          )
+        }
       </div>
       <div className="optional-cards">
         <h6>Cartas opcionadas</h6>
