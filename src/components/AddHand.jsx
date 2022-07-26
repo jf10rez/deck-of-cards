@@ -2,7 +2,7 @@ import { useContext, useState } from "react";
 import { DeckContext } from "../context/deckContext";
 import Swal from "sweetalert2";
 
-export const AddHand = () => {
+export const AddHand = ({ winner }) => {
   const { decks, dispatch } = useContext(DeckContext);
   const { deck_id } = decks.game;
   const [isDisabled, setIsDisabled] = useState(false)
@@ -29,8 +29,8 @@ export const AddHand = () => {
   };
 
   return (
-    <button className="btn btn-primary" onClick={handleAddHand} disabled={ isDisabled }>
-      AddHand
+    <button className="btn btn-primary" onClick={handleAddHand} disabled={ isDisabled || winner }>
+      <i className="bi bi-play-circle-fill"></i>
     </button>
   );
 };
