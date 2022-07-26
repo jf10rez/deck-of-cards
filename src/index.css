@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+
+body{
+    font-family: 'Montserrat', sans-serif;
+}
+
 .container-home {
     height: 80vh;
     display: flex;
@@ -7,4 +13,41 @@
 
 .input-home {
     width: 300px;
+}
+
+.container-cards {
+    height: 100vh;
+    border: solid 1px;
+}
+
+.container-cards .title {
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 2rem;
+    border-bottom: solid 1px;
+}
+
+.container-cards .optional-cards {
+    display: flex;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.container-cards .card-atras {
+    display: flex;
+    justify-content: center;
+}
+
+.container-cards .ob-cards {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    border-top: solid 1px;
+}
+
+
+img {
+    width: 15%;
+    height: 15%;
+    padding: 5px;
 }
