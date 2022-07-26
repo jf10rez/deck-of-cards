@@ -1,10 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { AppRouter } from './routers/AppRouter';
+import { DeckApp } from './DeckApp';
+
+import './index.css'
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <AppRouter />
+      <DeckApp />
   </React.StrictMode>
 );

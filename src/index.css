@@ -1,0 +1,10 @@
+.container-home {
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.input-home {
+    width: 300px;
+}

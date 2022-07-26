@@ -1,4 +1,6 @@
+import { useContext } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { DeckContext } from "../context/deckContext";
 import { DeckPage } from "../pages/DeckPage";
 import { HomePage } from "../pages/HomePage";
 import { PrivateRoute } from "./PrivateRoute";
@@ -6,7 +8,7 @@ import { PublicRoute } from "./PublicRoute";
 
 export const AppRouter = () => {
 
-    const uid = false
+    const { decks } = useContext(DeckContext)
 
   return (
     <Router>
@@ -15,7 +17,7 @@ export const AppRouter = () => {
           exact
           path="/"
           element={
-            <PublicRoute uid={uid}>
+            <PublicRoute uid={decks.existPlayers}>
               <HomePage />
             </PublicRoute>
           }
@@ -25,7 +27,7 @@ export const AppRouter = () => {
           exact
           path="/deck"
           element={
-            <PrivateRoute uid={uid}>
+            <PrivateRoute uid={decks.existPlayers}>
               <DeckPage />
             </PrivateRoute>
           }
